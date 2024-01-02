@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+# History
+HISTFILE=~/.history
+HISTSIZE=1000
+SAVEHIST=10000
+
+
+### Completion
+
+# File location
+zstyle :compinstall filename "$(realpath ~/dotconfig/zsh/config)"
+
+# Colors
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+
+# Load module
+autoload -Uz compinit
+compinit

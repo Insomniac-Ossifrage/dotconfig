@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# Homebrew Shellenv
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+### PATHS
+
+# Homebrew binary paths
+PATH="/opt/homebrew/opt/python@3.10/bin:${PATH+:$PATH}"
+PATH="/opt/homebrew/opt/binutils/bin:${PATH+:$PATH}"
+PATH="/opt/homebrew/opt/cython/bin:${PATH+:$PATH}"
+
+# Java Configuration
+PATH="/opt/homebrew/opt/openjdk/bin:${PATH+:$PATH}"
+JAVA_HOME="/opt/homebrew/opt/openjdk/libexec"
+
+
+### Auto-Completion Settings
+
+# Brew Completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  FPATH="$(brew --prefix)/share/zsh-completions:${FPATH}"
+fi

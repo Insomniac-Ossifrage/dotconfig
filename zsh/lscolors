@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Execute from .zsh_profile
+# Script should execute once per user-session
+
+local current_source=$(basename "$0")
+
+### Verify dependency existence
+
+if ! command -v vivid &> /dev/null; then
+    echo "[ ${current_source} ] vivid could not be found."
+    return
+fi
+
+if ! command -v gls &> /dev/null; then
+    echo "[ ${current_source} ] gls could not be found."
+    return
+fi
+
+### Setup
+
+# Use GNU 'ls' instead of BSD 'ls' (requires coreutils)
+alias ls="gls --color"
+# Generate color table (requires vivid)
+export LS_COLORS="$(vivid generate snazzy)"

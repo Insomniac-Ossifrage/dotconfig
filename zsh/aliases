@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Aliases
+alias python='python3'
+alias nano='/opt/homebrew/bin/nano'
