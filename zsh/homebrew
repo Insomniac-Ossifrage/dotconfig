@@ -3,12 +3,14 @@
 # Homebrew Shellenv
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+
 ### PATHS
 
 # Homebrew binary paths
 PATH="/opt/homebrew/opt/python@3.10/bin:${PATH+:$PATH}"
 PATH="/opt/homebrew/opt/binutils/bin:${PATH+:$PATH}"
 PATH="/opt/homebrew/opt/cython/bin:${PATH+:$PATH}"
+PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 # Java Configuration
 PATH="/opt/homebrew/opt/openjdk/bin:${PATH+:$PATH}"
