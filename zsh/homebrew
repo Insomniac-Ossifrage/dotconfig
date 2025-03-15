@@ -16,6 +16,10 @@ PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 PATH="/opt/homebrew/opt/openjdk/bin:${PATH+:$PATH}"
 JAVA_HOME="/opt/homebrew/opt/openjdk/libexec"
 
+# C/CXX Flags
+#export LDFLAGS="-L/opt/homebrew/opt/libomp/lib"
+#export CPPFLAGS="-I/opt/homebrew/opt/libomp/include"
+
 
 ### Auto-Completion Settings
 
