@@ -1,0 +1,19 @@
+#!/bin/bash
+# Clang
+function sv_enable_llvm () {
+    export PATH="/opt/homebrew/opt/llvm/bin${PATH+:$PATH}"
+    # To use the bundled libunwind please use the following LDFLAGS:
+    # LDFLAGS="-L/opt/homebrew/opt/llvm/lib/unwind -lunwind"
+    # To use the bundled libc++ please use the following LDFLAGS:
+    # LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib/unwind -lunwind"
+    # LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+    # CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+}
+
+
+# GNU binutils
+function sv_enable_binutils () {
+  export PATH="/opt/homebrew/opt/binutils/bin${PATH+:$PATH}"
+  export LDFLAGS="-L/opt/homebrew/opt/binutils/lib${LDFLAGS+:$LDFLAGS}"
+  export CPPFLAGS="-I/opt/homebrew/opt/binutils/include${CPPFLAGS+:$CPPFLAGS}"
+}

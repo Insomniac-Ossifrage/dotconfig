@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Set SDKROOT for and list environment vars
+function sv_enable_xcode() {
+  # Show current SDKROOT
+  echo "Current SDKROOT:"
+  launchctl getenv SDKROOT || echo "(not set)"
+
+  # Set SDKROOT
+  echo "Setting SDKROOT..."
+  launchctl setenv SDKROOT /Library/Developer/CommandLineTools/SDKs/MacOSX15.sdk
+
+  # Verify
+  echo "New SDKROOT:"
+  launchctl getenv SDKROOT
+}
+
+function sv_disable_xcode() {
+  echo "Unsetting SDKROOT..."
+  launchctl unsetenv SDKROOT
+  echo "SDKROOT is now:"
+  launchctl getenv SDKROOT || echo "(not set)"
+}
+
+
+function sv_show_xcode_env() {
+  echo "launchd environment variables:"
+  launchctl print gui/$(id -u) | awk '/environment = {/,/}/ {
+    if ($1 != "environment" && $1 != "}") print
+  }'
+}

@@ -13,11 +13,14 @@ pushd ${dotconfig_src} &> /dev/null
 # ZSH Config
 # Dependencies:
 # + lscolors
-
 . "./config"
 
 
 # Aliases
 . "./aliases"
+
+# Functions
+. "./function/homebrew"
+. "./function/xcode"
 
 popd &> /dev/null

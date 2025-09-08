@@ -11,25 +11,6 @@ PATH="/opt/homebrew/opt/python@3.10/bin${PATH+:$PATH}"
 PATH="/opt/homebrew/opt/cython/bin${PATH+:$PATH}"
 
 
-# Clang
-function enable_llvm () {
-    export PATH="/opt/homebrew/opt/llvm/bin${PATH+:$PATH}"
-    # To use the bundled libunwind please use the following LDFLAGS:
-    # LDFLAGS="-L/opt/homebrew/opt/llvm/lib/unwind -lunwind"
-    # To use the bundled libc++ please use the following LDFLAGS:
-    # LDFLAGS="-L/opt/homebrew/opt/llvm/lib/c++ -L/opt/homebrew/opt/llvm/lib/unwind -lunwind"
-    # LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-    # CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
-}
-
-
-# GNU binutils
-function enable_binutils () {
-  export PATH="/opt/homebrew/opt/binutils/bin${PATH+:$PATH}"
-  export LDFLAGS="-L/opt/homebrew/opt/binutils/lib${LDFLAGS+:$LDFLAGS}"
-  export CPPFLAGS="-I/opt/homebrew/opt/binutils/include${CPPFLAGS+:$CPPFLAGS}"
-}
-
 # Java Configuration
 PATH="/opt/homebrew/opt/openjdk/bin${PATH+:$PATH}"
 JAVA_HOME="/opt/homebrew/opt/openjdk/libexec"
