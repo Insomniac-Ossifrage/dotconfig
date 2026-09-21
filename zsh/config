@@ -11,9 +11,14 @@ SAVEHIST=10000
 # File location
 zstyle :compinstall filename "$(realpath ~/dotconfig/zsh/config)"
 
+# Allow ../ to be autocompleted
+zstyle ':completion:*' special-dirs ..
+
 # Colors
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+# Refresh Filenames
+zstyle ':completion:*' rehash true
 
 # Load module
 autoload -Uz compinit
